@@ -30,11 +30,11 @@ export default function RealTimeForm() {
 
     return (
         <form onSubmit={handleSubmit} style={{ maxWidth: '300px', margin: '0 auto' }}>
-            <label htmlFor="name" style={{ display: 'block', marginBottom: '10px', color: 'white' }}>
+            <label htmlFor="name" style={{ display: 'block', marginBottom: '10px', color: 'black' }}>
                 Name:
                 <input type="text" id="name" value={name} style={{ width: '100%', padding: '5px', border: '1px solid #ccc', borderRadius: '4px' }} onChange={(e) => setName(e.target.value)} />
             </label>
-            <label htmlFor="message" style={{ display: 'block', marginBottom: '10px', color: 'white' }}>
+            <label htmlFor="message" style={{ display: 'block', marginBottom: '10px', color: 'black' }}>
                 Message:
                 <textarea name="message" id="message" value={message} style={{ width: '100%', padding: '5px', border: '1px solid #ccc', borderRadius: '4px' }} onChange={(e) => setMessage(e.target.value)}></textarea>
             </label>
