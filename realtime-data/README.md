@@ -1,5 +1,29 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## RealTimeForm Component
+
+### State Management
+The component uses React's `useState` hook to manage two state variables, `name` and `message`, which represent the input fields for the user's name and message.
+
+### Adding Data
+The `addData` function is responsible for adding data to Firestore. It uses Firebase's `addDoc` function to add a new document to the 'message' collection in Firestore, containing the name and message provided by the user.
+
+### Form Submission
+The `handleSubmit` function is called when the form is submitted. It prevents the default form submission behavior, calls the `addData` function to add the user's input to Firestore, and then resets the input fields.
+
+## RealTimeDisplay Component
+
+### State Management
+This component also uses React's `useState` hook to manage a state variable `messages`, which holds an array of message objects fetched from Firestore.
+
+### Fetching Data
+The `useEffect` hook is used to fetch data from Firestore when the component mounts. It calls the `onSnapshot` function, which listens for real-time updates to the 'message' collection in Firestore. Whenever there is a change in the collection, the snapshot callback function is triggered, updating the state variable `messages` with the latest data.
+
+### Rendering Messages
+The component renders the messages by mapping over the `messages` array and rendering each message as a list item (`<li>`), displaying the name and message content.
+
+In summary, the RealTimeForm component handles user input and adds it to Firestore, while the RealTimeDisplay component listens for changes in the Firestore collection and displays the real-time updates to the user.
+
 ## Getting Started
 
 First, run the development server:
